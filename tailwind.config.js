@@ -8,6 +8,10 @@ module.exports = {
   content: [],
   theme: {
     extend: {},
+    spacing: {},
+    padding: {
+      aa: "5px"
+    }
   },
   plugins: [],
 };

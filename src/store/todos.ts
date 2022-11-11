@@ -11,6 +11,7 @@ export const useTodosStore = defineStore({
     todos: [] as TodosItem[],
     filter: "all",
     nextId: 0,
+    num: 0
   }),
   getters: {
     finishedTodos(state) {
@@ -23,6 +24,9 @@ export const useTodosStore = defineStore({
       const idx = this.nextId;
       this.todos.push({ text, id: idx, isFinished: false });
       return this.nextId;
+    },
+    addNum() {
+      this.num++
     }
   },
   debounce: {},
