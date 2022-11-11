@@ -2,11 +2,11 @@
   <h2>{{ filter }}</h2>
   <button @click="addTodo" class="border py-aa px-aa">addTodo</button>
   <h3>{{ todos }}</h3>
-  <button @click="nextId++">nextId++</button>
+  <button @click="nextId++" class="border py-aa px-aa">nextId++</button>
   <h3>{{ nextId }}</h3>
-  <button @click="store.addNum">num++</button>
+  <button @click="store.addNum" class="border py-aa px-aa">num++</button>
   <h3>{{ store.num }}</h3>
-  <button @click="reset">重置</button>
+  <button @click="reset" class="border py-aa px-aa">重置</button>
   <svg-icon iconName="icon-hanbaopisa" />
   <svg-icon iconName="icon-tianqi_baoyu" />
 </template>
