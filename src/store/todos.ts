@@ -23,7 +23,7 @@ export const useTodosStore = defineStore({
       const idx = this.nextId;
       this.todos.push({ text, id: idx, isFinished: false });
       return this.nextId;
-    }
+    },
   },
   debounce: {},
   // 持久化数据

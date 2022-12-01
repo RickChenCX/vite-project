@@ -32,7 +32,7 @@ export default defineComponent({
     store.$onAction(
       ({
         name, // action 的名字
-        store, // store 实例
+        // store, // store 实例
         args, // 调用这个 action 的参数
         after, // 在这个 action 执行完毕之后，执行这个函数
         onError, // 在这个 action 抛出异常的时候，执行这个函数
