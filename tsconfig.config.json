@@ -4,6 +4,6 @@
   "compilerOptions": {
     "composite": true,
     "jsx": "preserve",
-    "types": ["node"]
+    "types": ["node", "element-plus/global"]
   }
 }

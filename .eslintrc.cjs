@@ -18,7 +18,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: "latest",
   },
+  plugins: ["prettier"],
   rules: {
     "no-undef": "off",
+    "prettier/prettier": "error",
   },
 };

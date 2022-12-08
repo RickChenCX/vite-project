@@ -1,16 +1,20 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
-import { setupStore } from "@/store";
-import "./assets/main.css";
-import "./index.css";
+import { createApp } from "vue"
+import "./assets/main.css"
+import "./index.css"
+import "element-plus/dist/index.css"
+import ElementPlus from "element-plus"
 
-console.log(import.meta.env);
+import App from "./App.vue"
+import router from "./router"
+import { setupStore } from "@/store"
 
-const app = createApp(App);
+console.log(import.meta.env)
+
+const app = createApp(App)
 // use pinia
-setupStore(app);
+setupStore(app)
 
-app.use(router);
+app.use(ElementPlus, { size: "small", zIndex: 3000 })
+app.use(router)
 
-app.mount("#app");
+app.mount("#app")

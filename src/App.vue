@@ -1,29 +1,39 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
+<script lang="ts">
+import { defineComponent } from "vue"
+import { RouterLink, RouterView } from "vue-router"
+import HelloWorld from "./components/HelloWorld.vue"
+import { ElConfigProvider } from "element-plus"
+import zhCn from "element-plus/lib/locale/lang/zh-cn"
+export default defineComponent({
+  components: {
+    ElConfigProvider,
+  },
+  setup() {
+    return {
+      locale: zhCn,
+    }
+  },
+})
 </script>
-
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
+  <el-config-provider :locale="locale">
+    <div class="wrap">
+      <header>
+        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+        <div class="wrapper">
+          <HelloWorld msg="You did it!" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+          <nav>
+            <RouterLink to="/">Home</RouterLink>
+
+            <RouterLink to="/about">About</RouterLink>
+          </nav>
+        </div>
+      </header>
+      <RouterView />
     </div>
-  </header>
-
-  <RouterView />
+  </el-config-provider>
 </template>
 
 <style scoped>
