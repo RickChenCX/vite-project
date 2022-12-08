@@ -7,8 +7,8 @@
 //     <TheWelcome />
 //   </main>
 // </template> -->
-import { defineComponent, ref } from "vue"
-import { useTestStore } from "@/store/todos"
+import { defineComponent, ref } from "vue";
+import { useTestStore } from "@/store/todos";
 
 export default defineComponent({
   props: {
@@ -18,16 +18,16 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const store = useTestStore() // 使用store
-    const { title } = store
-    const str = ref<string>("tsx的使用")
+    const store = useTestStore(); // 使用store
+    const { title } = store;
+    const str = ref<string>("tsx的使用");
     const clickFunc1 = () => {
-      console.log("没有参数")
-    }
+      console.log("没有参数");
+    };
     const clickFunc2 = (msg: string = "默认值") => {
-      console.log(msg)
-      console.log(props.params)
-    }
+      console.log(msg);
+      console.log(props.params);
+    };
     store.$onAction(
       ({
         name, // action 的名字
@@ -36,22 +36,30 @@ export default defineComponent({
         after, // 在这个 action 执行完毕之后，执行这个函数
         onError, // 在这个 action 抛出异常的时候，执行这个函数
       }) => {
-        const startTime = Date.now()
+        const startTime = Date.now();
         // 这将在 `store` 上的操作执行之前触发
-        console.log(`Start "${name}" with params [${args.join(", ")}].`)
+        console.log(`Start "${name}" with params [${args.join(", ")}].`);
         // 如果 action 成功并且完全运行后，after 将触发。
         // 它将等待任何返回的 promise
         after((result) => {
-          console.log(`Finished "${name}" after ${Date.now() - startTime}ms.\nResult: ${result}.`)
-        })
+          console.log(
+            `Finished "${name}" after ${
+              Date.now() - startTime
+            }ms.\nResult: ${result}.`
+          );
+        });
         // 如果 action 抛出或返回 Promise.reject ，onError 将触发
         onError((error) => {
-          console.warn(`Failed "${name}" after ${Date.now() - startTime}ms.\nError: ${error}.`)
-        })
+          console.warn(
+            `Failed "${name}" after ${
+              Date.now() - startTime
+            }ms.\nError: ${error}.`
+          );
+        });
       }
       //要在卸载组件后保留它们，请将 true 作为第二个参数传递给当前组件
       // true
-    )
+    );
     return () => (
       <>
         <div class="async">{str.value}</div>
@@ -87,13 +95,13 @@ export default defineComponent({
                 Finding customers for your new business
               </a>
               <p class="mt-2 text-gray-500">
-                Getting a new business off the ground is a lot of hard work. Here are five ideas you
-                can use to find your first customers.
+                Getting a new business off the ground is a lot of hard work.
+                Here are five ideas you can use to find your first customers.
               </p>
             </div>
           </div>
         </div>
       </>
-    )
+    );
   },
-})
+});

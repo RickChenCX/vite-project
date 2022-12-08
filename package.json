@@ -64,7 +64,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,vue,ts,tsx, jsx}": [
-      "prettier --write"
+      "prettier"
     ],
     "*.{html,css,less,scss,md}": [
       "prettier --write"
