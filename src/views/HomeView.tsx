@@ -82,8 +82,7 @@ export default defineComponent({
               </div>
               <a
                 href="#"
-                class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
-              >
+                class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
                 Finding customers for your new business
               </a>
               <p class="mt-2 text-gray-500">
